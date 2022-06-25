@@ -152,68 +152,45 @@ $result = mysqli_query($conn,"SELECT `carid`,`brand`, `model`, `ctype`, `seat`, 
           </div>
         </div>
     		<div class="row">
-    			<div class="col-md-12">
-    				<div class="carousel-car owl-carousel">
-    					<div class="item">
-    						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/car-1.jpg);">
-		    					</div>
-		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-		    						<div class="d-flex mb-3">
-			    						<span class="cat">Cheverolet</span>
-			    						<p class="price ml-auto">$500 <span>/day</span></p>
-		    						</div>
-		    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
-		    					</div>
-		    				</div>
-    					</div>
-    					<div class="item">
-    						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/car-2.jpg);">
-		    					</div>
-		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-		    						<div class="d-flex mb-3">
-			    						<span class="cat">Cheverolet</span>
-			    						<p class="price ml-auto">$500 <span>/day</span></p>
-		    						</div>
-		    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
-		    					</div>
-		    				</div>
-    					</div>
-    					<div class="item">
-    						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/car-3.jpg);">
-		    					</div>
-		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-		    						<div class="d-flex mb-3">
-			    						<span class="cat">Cheverolet</span>
-			    						<p class="price ml-auto">$500 <span>/day</span></p>
-		    						</div>
-		    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
-		    					</div>
-		    				</div>
-    					</div>
-    					<div class="item">
-    						<div class="car-wrap rounded ftco-animate">
-		    					<div class="img rounded d-flex align-items-end" style="background-image: url(images/car-4.jpg);">
-		    					</div>
-		    					<div class="text">
-		    						<h2 class="mb-0"><a href="#">Mercedes Grand Sedan</a></h2>
-		    						<div class="d-flex mb-3">
-			    						<span class="cat">Cheverolet</span>
-			    						<p class="price ml-auto">$500 <span>/day</span></p>
-		    						</div>
-		    						<p class="d-flex mb-0 d-block"><a href="#" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
-		    					</div>
-		    				</div>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-    	</div>
+ <div class="col-md-12">
+    <div class="carousel-car owl-carousel">
+        <div class="item">
+            <div class="car-wrap rounded ftco-animate">
+  <?php            
+    if (mysqli_num_rows($result) > 0) {?>
+  
+ <?php $i=0;
+  while($row = mysqli_fetch_array($result)) {?>
+                <div class="img rounded d-flex align-items-end" style="<?php $file=$row["images"]; ?>">
+                </div>
+                <div class="text">
+                    <h2 class="mb-0"><?php echo  .$row["ctype"]. ?></h2>
+                    <div class="d-flex mb-3">
+                        <span class="cat"><?php echo .$row["model"]. ?></span>
+                        <p class="price ml-auto">₹<?php .$row["amount"]. ?> <span>/day</span></p>
+                    </div>
+                    <p class="d-flex mb-0 d-block"><a href="../login/login.php" class="btn btn-primary py-2 mr-1">Book now</a> </p>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+  </div>
+ </div>
+   <?php
+     $i++;
+     }?>
+    <?php}?>
+
+<?php
+ else{
+    echo "No result found";
+    }
+
+    $con->close();
+    ?>
+
+
     </section>
 
    
