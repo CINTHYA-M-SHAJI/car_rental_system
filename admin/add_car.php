@@ -31,7 +31,7 @@
 
 
 <tr><td>IMAGE:</td>
-<td><input type="file" name="images"  required/></td></tr>
+<td><input type="file" name="images"  accept="image/png, image/jpeg, image/wepg" required/></td></tr>
 
 <tr><td>AMOUNT PER DAY:</td>
 <td><input type="number" name="amount" required/></td></tr>
