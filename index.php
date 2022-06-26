@@ -1,9 +1,12 @@
 <?php
 session_start();
-include 'dbconnect.php'; 
+   include 'dbconnect.php'; 
+   $result = mysqli_query($conn,"SELECT `brand`, `model`, `ctype`, `seat`, `fuel`, `images`, `amount`, `stock` FROM  `car`");
+   $check=mysqli_num_rows($result) > 0;
 
-$result = mysqli_query($conn,"SELECT `carid`,`brand`, `model`, `ctype`, `seat`, `fuel`, `images`, `amount`, `stock` FROM  `car` ORDER BY carid");
+  //  $pathx= "images";
 
+  //  $file=$row["images"];
 ?>
 
 
@@ -49,7 +52,7 @@ $result = mysqli_query($conn,"SELECT `carid`,`brand`, `model`, `ctype`, `seat`, 
 	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
 	        
 	          <li class="nav-item"><a href="../html/pricing.html" class="nav-link">Pricing</a></li>
-	          <li class="nav-item"><a href="car.html" class="nav-link">Cars</a></li>
+	          <li class="nav-item"><a href="admin/view_car.php" class="nav-link">Cars</a></li>
 	          <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
 	          <li class="nav-item"><a href="login/login.php" class="nav-link">Login</a></li>
 	        </ul>
@@ -79,7 +82,7 @@ $result = mysqli_query($conn,"SELECT `carid`,`brand`, `model`, `ctype`, `seat`, 
       </div>
     </div>
 
-     <section class="ftco-section ftco-no-pt bg-light">
+     <section class="ftco-section ftco-no-pt bg-light" >
     	<div class="container" style="background-image: url('images/bg_1.jpg'); margin-bottom: 3px;
       padding-bottom: 15px;
       padding-top: 275px;">
@@ -87,7 +90,7 @@ $result = mysqli_query($conn,"SELECT `carid`,`brand`, `model`, `ctype`, `seat`, 
     			<div class="col-md-12	featured-top">
     				<div class="row no-gutters">
 	  					<div class="col-md-4 d-flex align-items-center">
-	  						<form action="#" class="request-form ftco-animate bg-primary">
+	  						<form action="book.php" class="request-form ftco-animate bg-primary" id="booking">
 		          		<h2>Make your trip</h2>
 			    				<div class="form-group">
 			    					<label for="" class="label">Pick-up date</label>
@@ -148,48 +151,56 @@ $result = mysqli_query($conn,"SELECT `carid`,`brand`, `model`, `ctype`, `seat`, 
     		<div class="row justify-content-center">
           <div class="col-md-12 heading-section text-center ftco-animate mb-5">
           	<span class="subheading">What we offer</span>
-            <h2 class="mb-2">Feeatured Vehicles</h2>
+            <h2 class="mb-2">Featured Vehicles</h2>
           </div>
         </div>
+
     		<div class="row">
- <div class="col-md-12">
-    <div class="carousel-car owl-carousel">
-        <div class="item">
-            <div class="car-wrap rounded ftco-animate">
-  <?php            
-    if (mysqli_num_rows($result) > 0) {?>
-  
- <?php $i=0;
-  while($row = mysqli_fetch_array($result)) {?>
-                <div class="img rounded d-flex align-items-end" style="<?php $file=$row["images"]; ?>">
+
+    			<div class="col-md-12">
+         
+    				<div class="carousel-car owl-carousel">
+            <?php
+
+            if($check){
+
+              $i=0;
+              while($row = mysqli_fetch_array($result)) 
+              {
+              
+            ?>
+    					<div class="item">
+
+
+                <div class="car-wrap rounded ftco-animate">
+                      <div class="img rounded d-flex align-items-end">
+                          <img src="images/<?php echo $row['images'];?>"class="img rounded d-flex align-items-end" >
+                     
+                      </div>
+                  
+                        <div class="text">
+                           <h2 class="mb-0"><?php echo $row['ctype'];?></h2>
+                               <div class="d-flex mb-3">
+                               <span class="cat"><?php echo $row['brand'];?></span>
+                            <p class="price ml-auto"> ₹<?php echo $row['amount'];?><span>/day</span></p>
+
+                          </div>
+                         <p class="d-flex mb-0 d-block"><a href="#booking" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                    
                 </div>
-                <div class="text">
-                    <h2 class="mb-0"><?php echo  .$row["ctype"]. ?></h2>
-                    <div class="d-flex mb-3">
-                        <span class="cat"><?php echo .$row["model"]. ?></span>
-                        <p class="price ml-auto">₹<?php .$row["amount"]. ?> <span>/day</span></p>
-                    </div>
-                    <p class="d-flex mb-0 d-block"><a href="../login/login.php" class="btn btn-primary py-2 mr-1">Book now</a> </p>
-                </div>
-            </div>
-        </div>
-       
-    </div>
-  </div>
- </div>
-   <?php
-     $i++;
-     }?>
-    <?php}?>
 
-<?php
- else{
-    echo "No result found";
-    }
+    					</div>
+             
+           </div>
+              <?php        
+                $i++;
+                }
+                }
+              ?> 
+    		  	</div>
+        	</div>
 
-    $con->close();
-    ?>
-
+    	</div>
 
     </section>
 
@@ -214,6 +225,6 @@ $result = mysqli_query($conn,"SELECT `carid`,`brand`, `model`, `ctype`, `seat`, 
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-    
+  
   </body>
 </html>
