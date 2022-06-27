@@ -8169,7 +8169,7 @@ h1, h2, h3, h4, h5,
 .ftco-navbar-light {
 
   position: absolute;
-  top: 20px;
+  top: 6px;
   left: 0;
   right: 0;
   z-index: 3; }
@@ -9160,7 +9160,7 @@ textarea.form-control {
 .ftco-footer {
   font-size: 16px;
   background: #000;
-  padding: 7em 0; }
+  padding: 1em 0; }
   .ftco-footer .logo {
     text-transform: uppercase;
     font-weight: 700;

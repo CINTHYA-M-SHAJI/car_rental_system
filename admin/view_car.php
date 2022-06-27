@@ -54,7 +54,7 @@ session_start();
 	          <li class="nav-item"><a href="../html/pricing.html" class="nav-link">Pricing</a></li>
 	          <li class="nav-item active"><a href="admin/view_car.php" class="nav-link">Cars</a></li>
 	          <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
-	          <li class="nav-item"><a href="login/login.php" class="nav-link">Login</a></li>
+	          <li class="nav-item"><a href="../login/login.php" class="nav-link">Login</a></li>
 	        </ul>
 	      </div>
 	    </div>
