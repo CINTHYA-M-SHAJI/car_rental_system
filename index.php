@@ -50,8 +50,8 @@ session_start();
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-	        
-	          <li class="nav-item"><a href="../html/pricing.html" class="nav-link">Pricing</a></li>
+        
+	          <!-- 	<li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li> -->
 	          <li class="nav-item"><a href="view_car.php" class="nav-link">Cars</a></li>
 	          <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
 	          <li class="nav-item"><a href="login/login.php" class="nav-link">Login</a></li>
@@ -90,7 +90,7 @@ session_start();
     			<div class="col-md-12	featured-top">
     				<div class="row no-gutters">
 	  					<div class="col-md-4 d-flex align-items-center">
-	  						<form action="book.php" class="request-form ftco-animate bg-primary" id="booking">
+	  						<form action="book_con.php" method="POST" class="request-form ftco-animate bg-primary" id="booking">
 		          		<h2>Make your trip</h2>
 			    				<div class="form-group">
 			    					<label for="" class="label">Pick-up date</label>
@@ -116,7 +116,7 @@ session_start();
 					            <div class="services w-100 text-center">
 				              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-route"></span></div>
 				              	<div class="text w-100">
-					                <h3 class="heading mb-2">Choose Your Pickup Date</h3>
+					                <h3 class="heading mb-2">Choose Your Date</h3>
 				                </div>
 					            </div>      
 					          </div>
@@ -132,7 +132,7 @@ session_start();
 					            <div class="services w-100 text-center">
 				              	<div class="icon d-flex align-items-center justify-content-center"><span class="flaticon-rent"></span></div>
 				              	<div class="text w-100">
-					                <h3 class="heading mb-2">Reserve Your Rental Car</h3>
+					                <h3 class="heading mb-2">Reserve Your Car</h3>
 					              </div>
 					            </div>      
 					          </div>
@@ -204,6 +204,12 @@ session_start();
 
     </section>
 
+	<footer class="ftco-footer ftco-bg-dark ftco-section">
+
+
+	
+	CAR RENTAL SYSTEM  -->   <a href="index .php">   Cinthya M Shaji</a>   
+	</footer>
    
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
