@@ -29,10 +29,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				    <label for="password">PASSWORD</label>
 				    <input type="password" placeholder="" name="password" required/>
   				</p>
-				  <!-- <p>
-				    <input type="checkbox" name="remember" id="remember">
-				    <label for="remember">Remember me for 14 days</label>
-				  </p> -->
+				  <br>
+				  <p>
+				    <!-- <input type="checkbox" name="remember" id="remember"> -->
+				    <label for="remember">Do you have account? &nbsp;<a href="../signup/Signup.php"><b>NEW USER</b></label>
+				  </p>
  			 </div>
  	 
 			  <p class="p-container">
