@@ -49,7 +49,7 @@ session_start();
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+	          <li class="nav-item active"><a href="index.php" class="nav-link">Home</a></li>
         
 	          <!-- 	<li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li> -->
 	          <li class="nav-item"><a href="view_car.php" class="nav-link">Cars</a></li>
@@ -185,7 +185,8 @@ session_start();
                             <p class="price ml-auto"> ₹<?php echo $row['amount'];?><span>/day</span></p>
 
                           </div>
-                         <p class="d-flex mb-0 d-block"><a href="#booking" class="btn btn-primary py-2 mr-1">Book now</a> <a href="#" class="btn btn-secondary py-2 ml-1">Details</a></p>
+                         <p class="d-flex mb-0 d-block"><a href="#booking" class="btn btn-primary py-2 mr-1">Book now</a>
+						 <a class="btn btn-secondary py-2 ml-1"><?php echo $row['stock'];?>  Stock</a></p>
                     
                 </div>
 

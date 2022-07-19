@@ -1,7 +1,7 @@
 <?php
 session_start();
    include 'dbconnect.php'; 
-   $result = mysqli_query($conn,"SELECT `brand`, `model`, `ctype`, `seat`, `fuel`, `images`, `amount`, `stock` FROM  `car`");
+   $result = mysqli_query($conn,"SELECT `brand`, `model`, `ctype`, `seat`, `fuel`, `images`, `amount`, `stock` FROM  `car` WHERE `stock` != 0");
    $check=mysqli_num_rows($result) > 0;
 
   //  $pathx= "images";
@@ -51,10 +51,10 @@ session_start();
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item "><a href="index.php" class="nav-link">Home</a></li>
 	        
-	          <li class="nav-item"><a href="../html/pricing.html" class="nav-link">Pricing</a></li>
+	          
 	          <li class="nav-item active"><a href="admin/view_car.php" class="nav-link">Cars</a></li>
 	          <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
-	          <li class="nav-item"><a href="login/login.php" class="nav-link">Login</a></li>
+	          <li class="nav-item" id="vlogin"><a href="login/login.php" class="nav-link">Login</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -185,7 +185,7 @@ session_start();
                             <p class="price ml-auto"> ₹<?php echo $row['amount'];?><span>/day</span></p>
 
                           </div>
-                         <p class="d-flex mb-0 d-block"><a href="index.php#booking" class="btn btn-primary py-2 mr-1">Book now</a> 
+                         <p class="d-flex mb-0 d-block"><a href="login/login.php" class="btn btn-primary py-2 mr-1">Book now</a> 
 						 <a class="btn btn-secondary py-2 ml-1"><?php echo $row['stock'];?>  Stock</a></p>
                     
                 </div>

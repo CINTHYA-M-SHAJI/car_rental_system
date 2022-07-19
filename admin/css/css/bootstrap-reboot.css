@@ -191,7 +191,14 @@ input {
 
 button,
 select {
-  text-transform: none; }
+  text-transform: none;
+  width: 185px;
+  height: 32px; }
+  select{
+    text-transform: none;
+  width: 185px;
+  height: 32px; 
+  }
 
 button,
 html [type="button"],

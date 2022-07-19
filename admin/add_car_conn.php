@@ -29,8 +29,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         move_uploaded_file($_FILES["images"]["tmp_name"], $images);		
 	}*/
    
-    $sql = "INSERT INTO `car`( `brand`, `model`, `ctype`, `seat`, `fuel`, `c_status`, `images`, `amount`, `stock`) 
-    VALUES ('$brand', '$model', '$ctype', '$seat', '$fuel','0','$images', '$amount', '$stock' )";
+    $sql = "INSERT INTO `car`( `brand`, `model`, `ctype`, `seat`, `fuel`,  `images`, `amount`, `stock`) 
+    VALUES ('$brand', '$model', '$ctype', '$seat', '$fuel','$images', '$amount', '$stock' )";
   
 //   echo "working";
   
@@ -39,11 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
         header("location: ../admin/view_car.php");
         echo "New car record successfully";
-        //echo $_FILES['images']['name'];
-        //echo $filename;
-        //echo "images/".$filename;
-        //echo $images;
-        //echo "Hello";
+
       } 
       else {
         echo "Error: " ;

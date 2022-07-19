@@ -40,6 +40,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="main-w3l">
 			<h1 class="logo-w3">Register Form</h1>
 			<div class="w3layouts-main">
+			<!-- <h1 class="logo-w3">Register Form</h1> -->
 				<h2><span>SignUp Here</span></h2>
 					<form action="../login/signup_con.php" method="post">
 						 

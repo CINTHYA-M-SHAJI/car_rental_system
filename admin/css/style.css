@@ -184,10 +184,12 @@ caption {
 
 th {
   text-align: inherit; }
-
-label {
-  display: inline-block;
-  margin-bottom: 0.5rem; }
+  
+  label {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 0.5rem;
+}
 
 button {
   border-radius: 0; }
@@ -212,7 +214,8 @@ input {
 
 button,
 select {
-  text-transform: none; }
+  text-transform: none;
+height: 31px; }
 
 select {
   word-wrap: normal; }
@@ -1592,7 +1595,7 @@ pre {
 
 .form-control {
   display: block;
-  width: 100%;
+  width: 50%;
   height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
   font-size: 1rem;
@@ -9096,11 +9099,11 @@ h1, h2, h3, h4, h5,
         display: none; } }
 
 .form-control {
-  height: 52px !important;
+  height: 17px !important;
   background: #fff !important;
   color: #000000 !important;
   font-size: 18px;
-  border-radius: 5px;
+  border-radius: 1px;
   -webkit-box-shadow: none !important;
   box-shadow: none !important; }
   .form-control:focus, .form-control:active {

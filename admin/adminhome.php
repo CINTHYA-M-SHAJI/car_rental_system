@@ -54,7 +54,7 @@ session_start();
 	          <li class="nav-item"><a href="../admin/add_car.php" class="nav-link">ADD CAR</a></li>
 	          <li class="nav-item"><a href="view_car.php" class="nav-link">Cars</a></li>
 	          <!-- <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li> -->
-	          <li class="nav-item"><a href="login/login.php" class="nav-link">Login</a></li>
+	          <li class="nav-item"><a href="logout.php" class="nav-link">Logout</a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -140,7 +140,13 @@ session_start();
     	</div>
 
     </section>
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
 
+
+	
+CAR RENTAL SYSTEM  -->   <a href="index .php">   Cinthya M Shaji</a>   
+</footer>
+ 
    
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
@@ -173,34 +179,4 @@ session_start();
 
 
 
-<?php
-session_start();
-// $name=$_SESSION['name'];
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Home_User</title>
-
-
-</head>
-
-<body  align="center">
-<form align='center'>
-  <h1><center>CAR RENTAL SYSTEM</center></h1>
-  <h3><center>ADMIN PAGE </center></h3>
-  <button formaction="../admin/add_car.php">ADD CAR</a></button>
-  <button formaction="../admin/view_car.php">VIEW BOOKING</a></button>
-  <button formaction="../admin/logout.php">LOGOUT</a></button>
-
-  </a></button>
-
-
-</form>
-<?php
-
-// echo $_SESSION['name'];
-//     echo $name;?>
-</body>
-</html>
+<!-- -->

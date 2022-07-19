@@ -18,12 +18,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 	$password = mysqli_real_escape_string($conn,$_POST['password']); 
 	
 	
-	$sql = "SELECT `name`,`usertype` FROM `user` WHERE `email` = '$email' AND `password`= '$password'";
+	$sql = "SELECT `userid`,`name`,`usertype` FROM `user` WHERE `email` = '$email' AND `password`= '$password'";
 	
 	$result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result);
 	$name = $row["name"];
     $usertype = $row["usertype"];
+	$userid= $row["userid"];
     // echo $usertype;
 
 	// echo $result;
@@ -43,6 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 	 else if($usertype=='user'){
 		$_SESSION['name']=$name;
+		$_SESSION['userid']=$userid;
 		header("location:../user/userindex.php");
 
 	 }
